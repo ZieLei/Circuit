@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>cart</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <ion-title>My Cart</ion-title>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cart</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="cart-item">
+    <div class="item-seller"></div>
+    <div class="item" *ngFor="let product of test_product">
+      <img [src]="product.image" class="product-image">
+      <div class="item-info">
+        <ion-label class="product-name">
+          <span class="product-name-text">{{ product.name }}</span>
+        </ion-label>
+        <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
+      </div>
+    </div>
+    <div class="add-remove-button" *ngFor="let product of test_product">
+      <button class="add-button">+</button>
+      <ion-label class="product-counter">{{ product.count }}</ion-label>
+      <button class="remove-button">-</button>
+    </div>
+  </div>
 </ion-content>

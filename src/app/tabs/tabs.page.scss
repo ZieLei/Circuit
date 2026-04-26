@@ -1,8 +1,27 @@
 ion-tab-bar {
     --background: white;
+    --min-height: 100px;
 }
 
 .icon {
     width: 25px;
     height: auto;
+}
+
+ion-tab-button {
+    --color-selected: skyblue;
+    font-family: 'Inter';
+    font-weight: 600;
+}
+
+.pfp {
+    width: 25px;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 50%;
+    outline: 2px solid skyblue;
+}
+
+.pfp::part(image) {
+    border-radius: 50%;
 }
