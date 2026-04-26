@@ -1,0 +1,56 @@
+ion-content {
+    --background: linear-gradient(#FF1352, #FF4073);
+}
+
+.welcome-label {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 30px;
+
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    padding-top: 400px;
+
+    filter: drop-shadow(0 3px 1px rgba(0, 0, 0, 0.5));
+}
+
+.circuit-label {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 60px;
+    
+    filter: none;
+}
+
+.register-button {
+    display: block;
+    padding-top: 180px;
+    padding-bottom: 20px;
+
+    margin: 0 auto;
+    width:  70%;
+
+    color: black;
+    --background: white;
+    --border-radius: 30px;
+
+    font-family: 'Inter';
+    font-weight: 600;
+}
+
+.login-button {
+    display: block;
+
+    margin: 0 auto;
+    width: 70%;
+
+    width:  70%;
+    color: white;
+    --background: transparent;
+    --border-radius:30px;
+    --border-width: 2px;
+    --border-style: solid;
+    --border-color: white;
+}

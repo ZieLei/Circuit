@@ -1,0 +1,42 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
+
+<ion-content [fullscreen]="true">
+    <ion-input class="search-bar" placeholder="Search.."></ion-input>
+
+    <div class="top-tab-bar" >
+        <ion-chip class="tab-buttons" *ngFor="let tab of tabs" [class.active]="selectedTab === tab.id" [class]="tab.id + '-button'" (click)="setTab(tab.id)">{{ tab.label }}</ion-chip>
+    </div>
+
+    <div class="content-body">
+    
+        <div class="tab-content">
+            <div *ngFor="let row of getRows(selectedTab)" >
+                <div class="space"></div>
+                <ion-label class="row-label">{{ row }}</ion-label>
+                <div class="rows">
+                    <div *ngFor="let item of getFilteredItems(row)" class="product-card">
+                        <ion-img class="item-image" [src]="item.image"></ion-img>
+                        <ion-label class="name-label">{{ item.name }}</ion-label>
+                        <ion-label class="price-label">{{ formatPrice(item.price) }}</ion-label>
+
+                        <div class="special-offer">
+                            <ion-label>Test Offer</ion-label>
+                        </div>
+
+                        <div class="rating-and-reviews">
+                            <div class="rating">
+                                <ion-img class="star-icon" src="assets/icon/star.png"></ion-img>
+                                <ion-label>{{ item.rating }}</ion-label>
+                            </div>
+                            <ion-label>{{ formatNumber(item.reviews) + ' reviews' }}</ion-label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+
+        </div>
+    </div>
+</ion-content>

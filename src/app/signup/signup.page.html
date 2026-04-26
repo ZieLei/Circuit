@@ -1,0 +1,45 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
+
+<ion-content [fullscreen]="true">
+  <ion-label class="sign-up-label">Sign up</ion-label>
+  
+  
+  <ion-input class="email-field" type="email" placeholder="Email" fill="outline"></ion-input>
+  <ion-input class="password-field" type="password" placeholder="Password" fill="outline"></ion-input>
+  <ion-input class="re-enter-password-field" type="password" placeholder="Re-enter password"></ion-input>
+
+  <div style="display: flex; justify-content: center;">
+    <ion-button class="sign-up-button">Sign up</ion-button>
+  </div>
+
+  <div class="or-line">
+    <span>or</span>
+  </div>
+
+  <div class="other-login">
+    <div style="width: 350px;">
+      <ion-button class="google-button">
+        Continue with Google
+      </ion-button>
+    </div>
+    <div style="width: 350px;">
+      <ion-button class="apple-button">
+        Continue with Apple
+      </ion-button>
+    </div>
+    <div style="width: 350px;">
+      <ion-button class="facebook-button">
+        Continue with Facebook
+      </ion-button>
+    </div>
+    <div style="width: 350px;">
+      <ion-button class="guest-button">
+        Continue As Guest
+      </ion-button>
+    </div>
+  </div>
+
+  <ion-label class="have-account-label">Already have an account? <span class="login-label">Log in</span></ion-label>
+</ion-content>

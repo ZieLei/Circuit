@@ -1,0 +1,167 @@
+ion-content {
+    --background: #fbf1c7;
+}
+
+.email-field{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    --padding-start: 20px;
+
+    border-radius: 50px;
+
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 350px;
+
+    font-family: 'Inter';
+
+    --placeholder-color: #504945;
+    --placeholder-font-family: 'Inter';
+    --placeholder-font-weight: 500;
+
+}
+
+.password-field {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    --padding-start: 20px;
+
+    border-radius: 50px;
+
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+
+    --placeholder-color: #504945;
+    --placeholder-font-family: 'Inter';
+    --placeholder-font-weight: 500;
+}
+
+.login-label {
+    color: #1d2021;
+    padding-top: 100px;
+    margin-bottom: 40px;
+
+    display: block;
+    text-align: center;
+
+    font-family: 'inter';
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.forgot-password {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    color: #928374;
+    font-family: 'Inter';
+    font-weight: 500;
+
+    padding-top: 10px;
+    text-decoration: underline;
+}
+
+.login-button {
+    min-height: 10px;
+    padding-top: 10px;
+
+    font-family: 'Inter';
+    min-width: 350px;
+    font-weight: 500;
+    color: #fbf1c7;
+
+    --background: #282828;
+    --border-radius: 50px;
+}
+
+.or-line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #1d2021;
+    margin: 20px 0;
+}
+
+.or-line::before,
+.or-line::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 30px;
+}
+
+.or-line span {
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(0, 0, 0, 0.2); 
+    padding: 0 5px;
+}
+
+.other-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.google-button {
+    font-family: 'Inter';
+    font-weight: 600;
+    width: 100%;
+
+    color: #282828;
+
+    --background: #ebdbb2;
+    --border-radius: 50px;
+}
+
+.apple-button {
+    font-family: 'Inter';
+    font-weight: 600;
+    width: 100%;
+
+    color: #282828;
+
+    --background: #ebdbb2;
+    --border-radius: 50px;
+}
+
+.facebook-button {
+    font-family: 'Inter';
+    font-weight: 600;
+    width: 100%;
+
+    color: #282828;
+
+    --background: #ebdbb2;
+    --border-radius: 50px;
+}
+
+.guest-button {
+    font-family: 'Inter';
+    font-weight: 600;
+    width: 100%;
+
+    color: #282828;
+
+    --background: #ebdbb2;
+    --border-radius: 50px;
+}
+
+.need-account-label {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15px;
+    
+    color: #282828;
+
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    padding-top: 10px;
+}
+
+.sign-up-label {
+    font-weight: 700;
+}
