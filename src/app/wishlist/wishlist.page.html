@@ -1,13 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>wishlist</ion-title>
-  </ion-toolbar>
-</ion-header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">wishlist</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="header">
+    <ion-label class="title">Wishlist</ion-label>
+    <ion-input class="search-bar" placeholder="Search.."></ion-input>
+    <button class="notification-button">
+      <img src="assets/icon/bell.png" alt="">
+    </button>
+  </div>
+
+  <div class="wishlist-item" *ngFor="let product of test_product">
+
+    <div class="item">
+      <img class="product-image" [src]="product.image">
+
+      <div class="product-details">
+        <ion-label>
+          <span class="product-name">{{ product.name }}</span>
+        </ion-label>
+        <ion-label class="product-variety">Black</ion-label>
+        <div class="price-and-view-button">
+          <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
+          <button class="view-product-button">View Product</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

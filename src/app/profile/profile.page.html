@@ -1,13 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="header">
+    <ion-label class="title">Profile</ion-label>
+  </div>
+
+  <div class="profile-area">
+    <div class="profile-banner">
+
+    </div>
+
+    <img src="assets/icon/bocchi-za-rokku.jpeg" alt="" class="profile-picture">
+
+    <ion-label class="user-name">Bocchi</ion-label>
+    <ion-label class="name">Hitori Gotoh</ion-label>
+
+    <button class="edit-button">
+      <img src="assets/icon/pencil.png" alt="">
+      Edit Profile
+    </button>
+
+    <div class="orders-buttons">
+      <div class="order-button">
+        <img src="assets/icon/pay.png">
+        <ion-label>To Pay</ion-label>
+      </div>
+      <div class="order-button">
+        <img src="assets/icon/box.png">
+        <ion-label>To Ship</ion-label>
+      </div>
+      <div class="order-button">
+        <img src="assets/icon/receive.png">
+        <ion-label>To Receive</ion-label>
+      </div>
+      <div class="order-button">
+         <img src="assets/icon/review.png">
+         <ion-label>To Review</ion-label>
+      </div>
+    </div>
+
+    <div class="address-button">
+      <div class="information">
+        <ion-label>
+          Hitori Gotoh, 0912345678
+        </ion-label>
+
+        <span class="edit-address-button">
+          Edit
+        </span>
+      </div>
+
+      <div class="address">
+        <ion-label>c/o STARRY Live House 3-2-1 Shimokitazawa, Setagaya-ku Tokyo, 155-0031, Japan</ion-label>
+      </div>
+    </div>
+  </div>
 </ion-content>

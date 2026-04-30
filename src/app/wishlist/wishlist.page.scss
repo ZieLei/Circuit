@@ -1,0 +1,125 @@
+.title {
+    font-family: 'Inter';
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: black;
+    font-size: 16px;
+}
+
+.header {
+    background: white;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+.search-bar {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    --padding-start: 20px;
+    border-radius: 50px;
+
+    display: block;
+    width: 250px;
+
+    font-family: 'Inter';
+
+    --placeholder-color: #504945;
+    --placeholder-font-family: 'Inter';
+    --placeholder-font-weight: 500;
+}
+
+.notification-button {
+    background: transparent;
+}
+
+.notification-button img {
+    width: 25px;
+    height: auto;
+}
+
+ion-content {
+    --background: rgba(255, 255, 255, 0.96);
+}
+
+.product-name {
+    font-family: 'Inter';
+    color: black;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    margin-top: 20px;
+  
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.wishlist-item  {
+    background: white;
+    margin: 10px;
+    border-radius: 10px;
+
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+
+}
+
+.item {
+    display: flex;
+}
+
+.product-image {
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    margin: 20px;
+    display: block;
+    border-radius: 2px;
+}
+
+.product-details {
+    color: black;
+}
+
+.product-variety {
+    color: gray;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.price-and-view-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-family: 'Inter';
+    color: red ;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.view-product-button {
+    margin-right: 10px;
+    background: skyblue;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+
+    font-family: 'Inter';
+    font-weight: 500;
+}

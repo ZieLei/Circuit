@@ -1,0 +1,67 @@
+.title {
+    font-family: 'Inter';
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: black;
+    font-size: 16px;
+
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.header {
+    background: white;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+ion-content {
+    --background: rgba(255, 255, 255, 0.96);
+}
+
+.profile-banner {
+    background: #e8a7a1;
+    height: 100px;
+}
+
+.profile-picture {
+    position: absolute;
+    height: 110px;
+    width: auto;
+
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.96);
+
+    top: 100px;
+    z-index: 10;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.change-profile-picture-button {
+    display: flex;
+    margin: 70px auto 0 auto;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 35px;
+    width: 200px;
+}
+
+.change-profile-picture-button img {
+    height: 15px;
+    width: auto;
+}
+
+.change-profile-picture-button ion-label {
+    color: white;
+    font-family: 'Inter';
+    line-height: 30px;
+    text-align: center;
+}
