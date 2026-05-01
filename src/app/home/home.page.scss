@@ -39,15 +39,21 @@ ion-content {
 .top-tab-bar{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
-  padding: 0 10px 12px;
+  padding: 0 16px 12px;
   overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
+  flex-shrink: 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     display: none;
   }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .tab-buttons {
@@ -60,7 +66,9 @@ ion-content {
   background: #f9fafb;
   --background: #f9fafb;
   min-height: 34px;
-  padding: 0 6px;
+  padding: 0 14px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .tab-buttons.active {
@@ -89,15 +97,16 @@ ion-content {
 .product-card {
   background: white;
   height: 286px;
-  width: 170px;
+  width: 100%;
+  max-width: 200px;
   min-height: 286px;
-  min-width: 170px;
   overflow: hidden;
 
   border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  justify-self: center;
 }
 
 .product-card:active {
@@ -154,14 +163,24 @@ ion-content {
   color: #ef4444;
   font-size: 16px;
   margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.original-price {
+  font-weight: 500;
+  font-size: 12px;
+  color: #9ca3af;
+  text-decoration: line-through;
 }
 
 .rows {
-  display: flex;
-  flex-direction: row;
-  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   padding: 14px 16px 20px;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     display: none;

@@ -3,44 +3,74 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
 
 <ion-content [fullscreen]="true">
-
+  <!-- Header -->
   <div class="header">
     <ion-img src="assets/icon/back.png" (click)="goBack()"></ion-img>
     <ion-label class="title">My Orders</ion-label>
-    <ion-img src="assets/icon/check.png"> </ion-img>
+    <div class="spacer"></div>
   </div>
 
-    <div class="category-tabs">
-      <span
-        class="category"
-        *ngFor="let category of categories"
-        [class.active]="selectedCategory === category.id"
-        (click)="selectCategory(category.id)"
-      >
-        {{ category.label }}
+  <!-- Category Tabs with Badge Counts -->
+  <div class="category-tabs">
+    <div
+      class="category"
+      *ngFor="let category of categories"
+      [class.active]="selectedCategory === category.id"
+      (click)="selectCategory(category.id)"
+    >
+      <span class="category-label">{{ category.label }}</span>
+      <span class="category-badge" *ngIf="getCategoryCount(category.id) > 0">
+        {{ getCategoryCount(category.id) }}
       </span>
     </div>
+  </div>
 
-    <div class="content-area">
-      <div class="order-item" *ngFor="let product of filteredProducts">
-        <div class="item">
-          <ion-label class="status">{{ product.status }}</ion-label>
-          
-          <div class="item-content">
-            <img class="product-image" [src]="product.image">
+  <!-- Orders List -->
+  <div class="orders-container">
+    <!-- Order Cards -->
+    <div class="order-card" *ngFor="let order of filteredOrders">
+      <!-- Order Header -->
+      <div class="order-header">
+        <div class="order-info">
+          <span class="order-number">{{ order.orderNumber }}</span>
+          <span class="order-date">{{ formatDate(order.date) }}</span>
+        </div>
+        <span class="order-status" [style.color]="order.statusColor">{{ order.status }}</span>
+      </div>
 
-            <div class="product-details">
-              <ion-label>
-                <span class="product-name">{{ product.name }}</span>
-              </ion-label>
-              <ion-label class="product-variety">Quantity: {{ getSafeCount(product.count) }}</ion-label>
-              <div class="price-and-view-button">
-                <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
-                <button class="view-product-button">View Product</button>
-              </div>
-            </div>
+      <!-- Order Items -->
+      <div class="order-items" (click)="viewOrderDetails(order)">
+        <div class="order-item" *ngFor="let item of order.items">
+          <ion-img class="item-image" [src]="item.image || 'assets/images/placeholder.png'"></ion-img>
+          <div class="item-info">
+            <span class="item-name">{{ item.name }}</span>
+            <span class="item-variant" *ngIf="item.variant">{{ item.variant }}</span>
+            <span class="item-qty">x{{ item.quantity }}</span>
           </div>
+          <span class="item-price">{{ formatPrice(item.price) }}</span>
+        </div>
+        <!-- More items indicator -->
+        <div class="more-items" *ngIf="order.items.length > 2">
+          +{{ order.items.length - 2 }} more item(s)
         </div>
       </div>
+
+      <!-- Order Footer -->
+      <div class="order-footer">
+        <div class="order-total">
+          <span class="total-label">{{ getItemCount(order.items) }} item(s)</span>
+          <span class="total-amount">{{ formatPrice(order.total) }}</span>
+        </div>
+        <button class="action-button" (click)="handleOrderAction(order)">
+          {{ getOrderActionButton(order.category).label }}
+        </button>
+      </div>
     </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="filteredOrders.length === 0">
+      <ion-icon name="cube-outline" class="empty-icon"></ion-icon>
+      <span class="empty-text">No orders in this category</span>
+    </div>
+  </div>
 </ion-content>

@@ -5,25 +5,37 @@
 <ion-content [fullscreen]="true">
   <div class="header">
     <ion-label class="title">Wishlist</ion-label>
-    <ion-input class="search-bar" placeholder="Search.."></ion-input>
-    <button class="notification-button">
-      <img src="assets/icon/bell.png" alt="">
-    </button>
   </div>
 
-  <div class="wishlist-item" *ngFor="let product of test_product">
+  <!-- Empty wishlist state -->
+  <div *ngIf="wishlistItems.length === 0" class="empty-wishlist">
+    <ion-icon name="heart-outline" class="empty-wishlist-icon"></ion-icon>
+    <ion-label class="empty-wishlist-text">Your wishlist is empty</ion-label>
+    <ion-button class="shop-now-button" routerLink="/tabs/home">Start Shopping</ion-button>
+  </div>
 
-    <div class="item">
-      <img class="product-image" [src]="product.image">
+  <!-- Wishlist items -->
+  <div class="wishlist-items-container" *ngIf="wishlistItems.length > 0">
+    <div class="wishlist-item" *ngFor="let product of wishlistItems">
+      <div class="item" (click)="viewProduct(product)">
+        <ion-img class="product-image" [src]="product.image || 'assets/images/placeholder.png'"></ion-img>
 
-      <div class="product-details">
-        <ion-label>
-          <span class="product-name">{{ product.name }}</span>
-        </ion-label>
-        <ion-label class="product-variety">Black</ion-label>
-        <div class="price-and-view-button">
-          <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
-          <button class="view-product-button">View Product</button>
+        <div class="product-details">
+          <ion-label>
+            <span class="product-name">{{ product.name }}</span>
+          </ion-label>
+          <ion-label class="product-variety" *ngIf="product.brand">{{ product.brand }}</ion-label>
+          <div class="price-and-buttons">
+            <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
+            <div class="action-buttons">
+              <button class="add-to-cart-btn" (click)="$event.stopPropagation(); addToCart(product)">
+                <ion-icon name="cart-outline"></ion-icon>
+              </button>
+              <button class="delete-btn" (click)="$event.stopPropagation(); removeItem(product)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -23,19 +23,19 @@
     </button>
 
     <div class="orders-buttons">
-      <div class="order-button" (click)="goToOrders()">
+      <div class="order-button" (click)="goToOrders('toPay')">
         <img src="assets/icon/pay.png">
         <ion-label>To Pay</ion-label>
       </div>
-      <div class="order-button" (click)="goToOrders()">
+      <div class="order-button" (click)="goToOrders('toShip')">
         <img src="assets/icon/box.png">
         <ion-label>To Ship</ion-label>
       </div>
-      <div class="order-button" (click)="goToOrders()">
+      <div class="order-button" (click)="goToOrders('toReceive')">
         <img src="assets/icon/receive.png">
         <ion-label>To Receive</ion-label>
       </div>
-      <div class="order-button" (click)="goToOrders()">
+      <div class="order-button" (click)="goToOrders('toReview')">
          <img src="assets/icon/review.png">
          <ion-label>To Review</ion-label>
       </div>

@@ -1,177 +1,285 @@
-.title {
-    font-family: 'Inter';
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    color: black;
-    font-size: 16px;
-
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
+// Header
 .header {
     background: white;
-    padding: 15px;
-    justify-content: center;
-    align-items: center;
-
+    padding: 12px 16px;
     display: flex;
-    flex-direction: row;
-
+    align-items: center;
+    justify-content: space-between;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
-}
 
-.header ion-img {
-    height: 30px;
-    width: 30px;
+    ion-img {
+        height: 28px;
+        width: 28px;
+        cursor: pointer;
+    }
+
+    .title {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 16px;
+        color: #111827;
+    }
+
+    .spacer {
+        width: 28px;
+    }
 }
 
 ion-content {
-    --background: rgba(255, 255, 255, 0.96);
+    --background: #f5f7fb;
 }
 
+// Category Tabs
 .category-tabs {
-  display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 28px 10px 10px 10px;
-  justify-content: space-between;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 12px;
+    gap: 8px;
+    background: white;
+    border-bottom: 1px solid #f3f4f6;
 
-  &::-webkit-scrollbar{
-    display: none;
-  }
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
-.category{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 13px;
-  padding: 8px 12px;
-  color: #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  
-  &.active {
-    color: #FF6400;
-    font-weight: bold;
-    border-bottom: 3px solid #ff6b6b;
-  }
-  
-  &:hover {
-    color: #FF6400;
-  }
-}
-
-
-
-.product-name {
+.category {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-family: 'Inter';
-    color: black;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 14px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-radius: 20px;
+    background: #f3f4f6;
+
+    &.active {
+        color: white;
+        background: #FF6400;
+        font-weight: 600;
+    }
+}
+
+.category-badge {
+    background: #ef4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.category.active .category-badge {
+    background: white;
+    color: #FF6400;
+}
+
+// Orders Container
+.orders-container {
+    padding: 12px;
+}
+
+// Order Card
+.order-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+// Order Header
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-number {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    color: #111827;
+}
+
+.order-date {
+    font-family: 'Inter';
     font-weight: 400;
-    font-size: 15px;
-    line-height: 1.2;
-    margin-top: 20px;
-  
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.order-status {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12px;
+}
+
+// Order Items
+.order-items {
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f9fafb;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #f3f4f6;
+    flex-shrink: 0;
+}
+
+.item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-name {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    color: #111827;
+    display: block;
+    line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
 }
 
-.order-item  {
-    background: white;
-    margin: 10px;
-    border-radius: 10px;
-
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
-
-}
-
-.item-content {
-  display: flex;         
-  flex-direction: row;
-  align-items: stretch;
-}
-
-.item {
-    display: flex;
-    flex-direction: column;   
-    background: white;
-    margin: 0 10px 10px 10px;
-    border-radius: 10px;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
-}
-
-.product-image {
-    height: 110px;
-    width: 110px;
-    object-fit: cover;
-    margin: 20px;
+.item-variant {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 11px;
+    color: #6b7280;
     display: block;
-    border-radius: 2px;
+    margin-top: 2px;
 }
 
-.product-details {
-    color: black;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-    padding: 20px 10px 20px 0;
+.item-qty {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 11px;
+    color: #9ca3af;
+    display: block;
+    margin-top: 2px;
 }
 
-.product-variety {
-    color: gray;
+.item-price {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    color: #111827;
+    flex-shrink: 0;
+}
+
+.more-items {
     font-family: 'Inter';
     font-weight: 400;
     font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 14px;
+    color: #9ca3af;
+    padding: 8px 0;
+    text-align: center;
+    border-top: 1px dashed #f3f4f6;
+    margin-top: 8px;
 }
 
-.price-and-view-button {
+// Order Footer
+.order-footer {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
-    width: 100%;
-    gap: 10px;
+    padding: 14px 16px;
+    background: #fafafa;
+    border-top: 1px solid #f3f4f6;
 }
 
-.product-price {
+.order-total {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.total-label {
     font-family: 'Inter';
-    color: red ;
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #6b7280;
 }
 
-.view-product-button {
-    margin-right: 10px;
-    background: skyblue;
-    height: 30px;
-    width: 100px;
-    flex-shrink: 0;
-    border-radius: 5px;
-
+.total-amount {
     font-family: 'Inter';
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ef4444;
 }
 
-.status {
-    color: black;
+.action-button {
+    background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    color: white;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
 
-    display: block;
-    width: 100%;
+    &:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+}
+
+// Empty State
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
     text-align: center;
-    margin-top: 7px;
 
-    font-family: 'Inter';
-    font-weight: 500;
+    .empty-icon {
+        font-size: 60px;
+        color: #d1d5db;
+        margin-bottom: 16px;
+    }
+
+    .empty-text {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 14px;
+        color: #6b7280;
+    }
 }

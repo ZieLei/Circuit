@@ -394,3 +394,458 @@ ion-content {
   transform: scale(0.97);
   background: #1f2937;
 }
+
+// Reviews Section
+.reviews-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.reviews-header {
+  margin-bottom: 16px;
+}
+
+.reviews-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reviews-summary {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.rating-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Inter";
+  font-size: 12px;
+}
+
+.star-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #9ca3af;
+  min-width: 35px;
+
+  ion-icon {
+    font-size: 12px;
+    color: #fbbf24;
+  }
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.count-label {
+  color: #9ca3af;
+  min-width: 20px;
+  text-align: right;
+}
+
+.write-review-button {
+  --background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+  --background-hover: #ff7520;
+  --border-radius: 12px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  height: 44px;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-card {
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewer-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  ion-icon {
+    font-size: 24px;
+    color: #9ca3af;
+  }
+}
+
+.reviewer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer-name {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 13px;
+  color: #111827;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 11px;
+  color: #22c55e;
+  margin-top: 2px;
+
+  ion-icon {
+    font-size: 12px;
+  }
+}
+
+.review-date {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.review-rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+
+  ion-icon {
+    font-size: 14px;
+    color: #e5e7eb;
+
+    &.filled {
+      color: #fbbf24;
+    }
+  }
+}
+
+.review-title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.review-content {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.review-images {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.review-actions {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.helpful-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+
+  ion-icon {
+    font-size: 16px;
+  }
+
+  &:active {
+    color: #FF6400;
+  }
+}
+
+// Write Review Modal
+.review-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.review-modal {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.review-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0;
+
+  h3 {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 18px;
+    color: #111827;
+    margin: 0;
+  }
+}
+
+.close-button {
+  background: #f3f4f6;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:active {
+    background: #e5e7eb;
+    transform: scale(0.95);
+  }
+}
+
+.review-modal-content {
+  padding: 20px;
+}
+
+.review-product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 20px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product-name {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 13px;
+    color: #111827;
+    line-height: 1.4;
+  }
+}
+
+.rating-selection {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 10px;
+  }
+}
+
+.star-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  ion-icon {
+    font-size: 32px;
+    color: #e5e7eb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.filled {
+      color: #fbbf24;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.rating-text {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  color: #FF6400;
+}
+
+.review-input-group {
+  margin-bottom: 16px;
+
+  label {
+    display: block;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+  }
+}
+
+.review-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-size: 14px;
+  color: #111827;
+  background: white;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #FF6400;
+    box-shadow: 0 0 0 3px rgba(255, 100, 0, 0.1);
+  }
+}
+
+.review-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-size: 14px;
+  color: #111827;
+  background: white;
+  resize: vertical;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #FF6400;
+    box-shadow: 0 0 0 3px rgba(255, 100, 0, 0.1);
+  }
+}
+
+.submit-review-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    background: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 12px rgba(255, 100, 0, 0.3);
+  }
+}

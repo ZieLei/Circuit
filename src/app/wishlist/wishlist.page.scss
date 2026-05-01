@@ -151,3 +151,165 @@ ion-content {
     font-weight: 600;
     font-size: 12px;
 }
+
+.price-and-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.add-to-cart-btn,
+.delete-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    ion-icon {
+        font-size: 18px;
+    }
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    color: white;
+}
+
+.delete-btn {
+    background: #fef2f2;
+    color: #ef4444;
+    border: 1px solid #fee2e2;
+}
+
+// Empty wishlist state
+.empty-wishlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 24px;
+    text-align: center;
+}
+
+.empty-wishlist-icon {
+    font-size: 80px;
+    color: #d1d5db;
+    margin-bottom: 20px;
+}
+
+.empty-wishlist-text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.shop-now-button {
+    --background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    --border-radius: 10px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.price-and-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.add-to-cart-btn,
+.delete-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    ion-icon {
+        font-size: 18px;
+    }
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    color: white;
+}
+
+.delete-btn {
+    background: #fef2f2;
+    color: #ef4444;
+    border: 1px solid #fee2e2;
+}
+
+// Empty wishlist state
+.empty-wishlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 24px;
+    text-align: center;
+}
+
+.empty-wishlist-icon {
+    font-size: 80px;
+    color: #d1d5db;
+    margin-bottom: 20px;
+}
+
+.empty-wishlist-text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.shop-now-button {
+    --background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    --border-radius: 10px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+}

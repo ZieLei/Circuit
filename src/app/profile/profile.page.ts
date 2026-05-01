@@ -22,7 +22,11 @@ export class ProfilePage implements OnInit {
     this.router.navigate(['/edit-profile']);
   }
 
-  goToOrders() {
-    this.router.navigate(['/orders']);
+  goToOrders(category?: string) {
+    if (category) {
+      this.router.navigate(['/orders'], { queryParams: { category } });
+    } else {
+      this.router.navigate(['/orders']);
+    }
   }
 }

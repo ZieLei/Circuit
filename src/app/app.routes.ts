@@ -57,5 +57,9 @@ export const routes: Routes = [
   {
     path: 'product-view',
     loadComponent: () => import('./product-view/product-view.page').then( m => m.ProductViewPage)
+  },
+  {
+    path: 'checkout',
+    loadComponent: () => import('./checkout/checkout.page').then( m => m.CheckoutPage)
   }
 ];

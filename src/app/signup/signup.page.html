@@ -3,43 +3,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
 
 <ion-content [fullscreen]="true">
-  <ion-label class="sign-up-label">Sign up</ion-label>
-  
-  
-  <ion-input class="email-field" type="email" placeholder="Email" fill="outline"></ion-input>
-  <ion-input class="password-field" type="password" placeholder="Password" fill="outline"></ion-input>
-  <ion-input class="re-enter-password-field" type="password" placeholder="Re-enter password"></ion-input>
+  <div class="signup-container">
+    <!-- Header -->
+    <div class="signup-header">
+      <div class="logo-small">
+        <ion-icon name="hardware-chip-outline"></ion-icon>
+      </div>
+      <h1 class="signup-title">Create Account</h1>
+      <p class="signup-subtitle">Join Circuit for the best PC parts</p>
+    </div>
 
-  <div style="display: flex; justify-content: center;">
-    <ion-button class="sign-up-button" (click)="signup()">Sign up</ion-button>
+    <!-- Signup Form -->
+    <div class="signup-form">
+      <div class="input-group">
+        <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+        <ion-input class="modern-input" type="email" placeholder="Email Address" fill="outline"></ion-input>
+      </div>
+
+      <div class="input-group">
+        <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+        <ion-input class="modern-input" type="password" placeholder="Password" fill="outline"></ion-input>
+      </div>
+
+      <div class="input-group">
+        <ion-icon name="shield-checkmark-outline" class="input-icon"></ion-icon>
+        <ion-input class="modern-input" type="password" placeholder="Confirm Password" fill="outline"></ion-input>
+      </div>
+
+      <ion-button class="primary-signup-button" (click)="signup()">
+        <ion-icon name="person-add-outline" slot="start"></ion-icon>
+        Create Account
+      </ion-button>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider">
+      <div class="line"></div>
+      <span>or sign up with</span>
+      <div class="line"></div>
+    </div>
+
+    <!-- Social Signup -->
+    <div class="social-signup">
+      <button class="social-button google" (click)="signup()">
+        <ion-icon name="logo-google"></ion-icon>
+      </button>
+      <button class="social-button apple" (click)="signup()">
+        <ion-icon name="logo-apple"></ion-icon>
+      </button>
+      <button class="social-button facebook" (click)="signup()">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Login Link -->
+    <div class="login-link">
+      <span>Already have an account?</span>
+      <a (click)="goToLogin()">Sign In</a>
+    </div>
   </div>
-
-  <div class="or-line">
-    <span>or</span>
-  </div>
-
-  <div class="other-login">
-    <div style="width: 350px;">
-      <ion-button class="google-button" (click)="signup()">
-        Continue with Google
-      </ion-button>
-    </div>
-    <div style="width: 350px;">
-      <ion-button class="apple-button" (click)="signup()">
-        Continue with Apple
-      </ion-button>
-    </div>
-    <div style="width: 350px;">
-      <ion-button class="facebook-button" (click)="signup()">
-        Continue with Facebook
-      </ion-button>
-    </div>
-    <div style="width: 350px;">
-      <ion-button class="guest-button" (click)="signup()">
-        Continue As Guest
-      </ion-button>
-    </div>
-  </div>
-
-  <ion-label class="have-account-label">Already have an account? <span class="login-label" (click)="goToLogin()">Log in</span></ion-label>
 </ion-content>

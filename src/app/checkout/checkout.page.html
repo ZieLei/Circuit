@@ -1,0 +1,151 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
+
+<ion-content [fullscreen]="true">
+  <!-- Header -->
+  <div class="header">
+    <ion-icon name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    <ion-label class="title">Checkout</ion-label>
+    <div class="spacer"></div>
+  </div>
+
+  <!-- Success State -->
+  <div class="success-container" *ngIf="showSuccess">
+    <div class="success-icon">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </div>
+    <ion-label class="success-title">Order Placed!</ion-label>
+    <ion-label class="success-message">Your order has been placed successfully. Redirecting to orders...</ion-label>
+  </div>
+
+  <!-- Checkout Content -->
+  <div class="checkout-content" *ngIf="!showSuccess">
+    
+    <!-- Shipping Address Card -->
+    <div class="address-card" (click)="goToEditAddress()">
+      <div class="address-header">
+        <div class="address-label">
+          <ion-icon name="location-outline"></ion-icon>
+          <span>Shipping Address</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+      <div class="address-content">
+        <div class="recipient">
+          <span class="name">{{ shippingInfo.name }}</span>
+          <span class="phone">{{ shippingInfo.phone }}</span>
+        </div>
+        <div class="full-address">
+          {{ shippingInfo.address }}, {{ shippingInfo.city }}, {{ shippingInfo.zipCode }}, {{ shippingInfo.country }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Ordered -->
+    <div class="section">
+      <div class="section-header">
+        <ion-label class="section-title">Products Ordered ({{ getItemCount() }})</ion-label>
+      </div>
+      <div class="order-items">
+        <div class="order-item" *ngFor="let item of cartItems">
+          <ion-img [src]="item.product.image || 'assets/images/placeholder.png'" class="item-image"></ion-img>
+          <div class="item-details">
+            <ion-label class="item-name">{{ item.product.name }}</ion-label>
+            <ion-label class="item-variant" *ngIf="item.selectedVariant">{{ item.selectedVariant }}</ion-label>
+            <ion-label class="item-quantity">x{{ item.quantity }}</ion-label>
+          </div>
+          <ion-label class="item-price">{{ formatPrice(item.product.price) }}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery Options -->
+    <div class="section">
+      <ion-label class="section-title">Delivery Option</ion-label>
+      <div class="delivery-options">
+        <div class="delivery-option" [class.selected]="deliveryOption === 'standard'" (click)="selectDelivery('standard')">
+          <div class="option-info">
+            <span class="option-name">Standard Delivery</span>
+            <span class="option-time">3-5 business days</span>
+          </div>
+          <span class="option-price">{{ formatPrice(50) }}</span>
+          <div class="check-mark" *ngIf="deliveryOption === 'standard'">✓</div>
+        </div>
+        <div class="delivery-option" [class.selected]="deliveryOption === 'express'" (click)="selectDelivery('express')">
+          <div class="option-info">
+            <span class="option-name">Express Delivery</span>
+            <span class="option-time">1-2 business days</span>
+          </div>
+          <span class="option-price">{{ formatPrice(100) }}</span>
+          <div class="check-mark" *ngIf="deliveryOption === 'express'">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="section">
+      <ion-label class="section-title">Payment Method</ion-label>
+      <div class="payment-methods">
+        <div class="payment-method" [class.selected]="paymentMethod === 'cod'" (click)="selectPayment('cod')">
+          <div class="method-icon cod">
+            <ion-icon name="cash-outline"></ion-icon>
+          </div>
+          <span class="method-name">Cash on Delivery</span>
+          <div class="check-mark" *ngIf="paymentMethod === 'cod'">✓</div>
+        </div>
+        <div class="payment-method" [class.selected]="paymentMethod === 'card'" (click)="selectPayment('card')">
+          <div class="method-icon card">
+            <ion-icon name="card-outline"></ion-icon>
+          </div>
+          <span class="method-name">Credit / Debit Card</span>
+          <div class="check-mark" *ngIf="paymentMethod === 'card'">✓</div>
+        </div>
+        <div class="payment-method" [class.selected]="paymentMethod === 'gcash'" (click)="selectPayment('gcash')">
+          <div class="method-icon gcash">
+            <span>GCash</span>
+          </div>
+          <span class="method-name">GCash E-Wallet</span>
+          <div class="check-mark" *ngIf="paymentMethod === 'gcash'">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="section summary-section">
+      <ion-label class="section-title">Order Summary</ion-label>
+      <div class="summary-rows">
+        <div class="summary-row">
+          <span>Subtotal ({{ getItemCount() }} items)</span>
+          <span>{{ formatPrice(getCartTotal()) }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping Fee</span>
+          <span>{{ formatPrice(getShippingFee()) }}</span>
+        </div>
+        <div class="summary-row voucher-row">
+          <span>Voucher</span>
+          <span class="voucher-btn">Select Voucher ></span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total Payment</span>
+          <span class="total-amount">{{ formatPrice(getOrderTotal()) }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom spacing -->
+    <div class="bottom-spacer"></div>
+  </div>
+</ion-content>
+
+<!-- Bottom Place Order Bar -->
+<div class="bottom-bar" *ngIf="!showSuccess">
+  <div class="bottom-total">
+    <span class="total-text">Total:</span>
+    <span class="total-price">{{ formatPrice(getOrderTotal()) }}</span>
+  </div>
+  <button class="place-order-btn" (click)="placeOrder()">
+    Place Order
+  </button>
+</div>
