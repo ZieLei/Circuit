@@ -61,7 +61,7 @@ ion-content {
 
     &.active {
         color: white;
-        background: #FF6400;
+        background: #1d4ed8;
         font-weight: 600;
     }
 }
@@ -79,7 +79,7 @@ ion-content {
 
 .category.active .category-badge {
     background: white;
-    color: #FF6400;
+    color: #1d4ed8;
 }
 
 // Orders Container
@@ -244,7 +244,7 @@ ion-content {
 }
 
 .action-button {
-    background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
     color: white;
     font-family: 'Inter';
     font-weight: 600;

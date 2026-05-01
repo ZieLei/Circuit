@@ -111,6 +111,58 @@ ion-content {
     padding: 16px 10px 16px 0;
 }
 
+.product-header {
+    margin-bottom: 4px;
+}
+
+.product-brand {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+    display: block;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 4px 0;
+
+    .star-icon {
+        font-size: 14px;
+        color: #fbbf24;
+    }
+
+    .rating-value {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 13px;
+        color: #111827;
+    }
+
+    .rating-count {
+        font-family: 'Inter';
+        font-size: 12px;
+        color: #9ca3af;
+    }
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .original-price {
+        font-family: 'Inter';
+        font-weight: 500;
+        font-size: 12px;
+        color: #9ca3af;
+        text-decoration: line-through;
+    }
+}
+
 .product-variety {
     color: #6b7280;
     font-family: 'Inter';
@@ -189,7 +241,7 @@ ion-content {
 }
 
 .add-to-cart-btn {
-    background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
     color: white;
 }
 
@@ -224,7 +276,7 @@ ion-content {
 }
 
 .shop-now-button {
-    --background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    --background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
     --border-radius: 10px;
     --padding-start: 24px;
     --padding-end: 24px;
@@ -270,7 +322,7 @@ ion-content {
 }
 
 .add-to-cart-btn {
-    background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
     color: white;
 }
 
@@ -305,7 +357,7 @@ ion-content {
 }
 
 .shop-now-button {
-    --background: linear-gradient(135deg, #FF6400 0%, #ff8533 100%);
+    --background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
     --border-radius: 10px;
     --padding-start: 24px;
     --padding-end: 24px;

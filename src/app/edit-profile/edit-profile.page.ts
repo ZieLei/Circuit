@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonImg, IonItem, IonInput, IonInputPasswordToggle } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonImg, IonItem, IonInput, IonInputPasswordToggle, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, checkmarkOutline, personOutline, mailOutline, lockClosedOutline, cameraOutline, saveOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
   styleUrls: ['./edit-profile.page.scss'],
   standalone: true,
-  imports: [IonInput, IonItem, IonImg, IonLabel, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonInputPasswordToggle]
+  imports: [IonInput, IonItem, IonImg, IonLabel, IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButton, CommonModule, FormsModule, IonInputPasswordToggle]
 })
 export class EditProfilePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    addIcons({ arrowBackOutline, checkmarkOutline, personOutline, mailOutline, lockClosedOutline, cameraOutline, saveOutline });
+  }
 
   ngOnInit() {
   }

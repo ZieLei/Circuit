@@ -21,12 +21,26 @@
         <ion-img class="product-image" [src]="product.image || 'assets/images/placeholder.png'"></ion-img>
 
         <div class="product-details">
-          <ion-label>
-            <span class="product-name">{{ product.name }}</span>
-          </ion-label>
-          <ion-label class="product-variety" *ngIf="product.brand">{{ product.brand }}</ion-label>
+          <div class="product-header">
+            <ion-label>
+              <span class="product-name">{{ product.name }}</span>
+            </ion-label>
+            <ion-label class="product-brand" *ngIf="product.brand">{{ product.brand }}</ion-label>
+          </div>
+
+          <div class="product-rating" *ngIf="product.rating">
+            <ion-icon name="star" class="star-icon"></ion-icon>
+            <span class="rating-value">{{ product.rating }}</span>
+            <span class="rating-count">({{ formatNumber(product.reviews) }})</span>
+          </div>
+
           <div class="price-and-buttons">
-            <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
+            <div class="price-section">
+              <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
+              <ion-label class="original-price" *ngIf="product.originalPrice && product.originalPrice > product.price">
+                {{ formatPrice(product.originalPrice) }}
+              </ion-label>
+            </div>
             <div class="action-buttons">
               <button class="add-to-cart-btn" (click)="$event.stopPropagation(); addToCart(product)">
                 <ion-icon name="cart-outline"></ion-icon>

@@ -3,32 +3,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
 
 <ion-content [fullscreen]="true">
-  <div class="header">
-    <ion-img src="assets/icon/back.png" (click)="goBack()"></ion-img>
-    <ion-label class="title">Edit Profile</ion-label>
-    <ion-img src="assets/icon/check.png" (click)="saveProfile()"> </ion-img>
-  </div>
+  <div class="edit-profile-container">
+    <!-- Header -->
+    <div class="header">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+      <ion-label class="title">Edit Profile</ion-label>
+      <button class="save-button" (click)="saveProfile()">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </button>
+    </div>
 
-  <div class="profile-banner"></div>
-  <img class="profile-picture" src="assets/icon/bocchi-za-rokku.jpeg">
+    <!-- Profile Banner & Picture -->
+    <div class="profile-banner"></div>
+    <div class="profile-picture-container">
+      <img class="profile-picture" src="assets/icon/bocchi-za-rokku.jpeg" alt="Profile">
+      <button class="change-picture-button">
+        <ion-icon name="camera-outline"></ion-icon>
+      </button>
+    </div>
 
-  <button class="change-profile-picture-button">
-    <img src="assets/icon/pencil.png" alt="">
-    <ion-label>Change profile picture</ion-label>
-  </button>
+    <!-- Form -->
+    <div class="form-container">
+      <div class="input-group">
+        <span class="input-label">Username</span>
+        <div class="input-wrapper">
+          <ion-icon name="person-outline" class="input-icon"></ion-icon>
+          <ion-input class="modern-input" placeholder="Enter username" value="Bocchi"></ion-input>
+        </div>
+      </div>
 
-  <div class="username-change">
-    <ion-label class="label-change">Username:</ion-label>
-    <ion-input class="input-change" placeholder="Bocchi"></ion-input>
-  </div>
-  <div class="email-change">
-    <ion-label class="label-change">Email:</ion-label>
-    <ion-input class="input-change" placeholder="bocchi.hitori@chuu.ne.jp" type="Email"></ion-input>
-  </div>
-  <div class="password-change">
-    <ion-label class="label-change">Password:</ion-label>
-    <ion-input class="input-change" placeholder="Password" type="password">
-      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-    </ion-input>
+      <div class="input-group">
+        <span class="input-label">Email Address</span>
+        <div class="input-wrapper">
+          <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+          <ion-input class="modern-input" placeholder="Enter email" type="email" value="bocchi.hitori@chuu.ne.jp"></ion-input>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <span class="input-label">Password</span>
+        <div class="input-wrapper">
+          <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+          <ion-input class="modern-input" placeholder="Enter password" type="password">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </div>
+      </div>
+
+      <ion-button class="save-profile-button" (click)="saveProfile()">
+        <ion-icon name="save-outline" slot="start"></ion-icon>
+        Save Changes
+      </ion-button>
+    </div>
   </div>
 </ion-content>

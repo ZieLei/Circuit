@@ -16,20 +16,55 @@
 
   <!-- Cart items -->
   <div class="cart-items-container" *ngIf="cartItems.length > 0">
-    <div class="cart-item" *ngFor="let item of cartItems">
+    <!-- Select All Bar -->
+    <div class="select-all-bar">
+      <ion-checkbox
+        [checked]="isAllSelected()"
+        (ionChange)="toggleSelectAll()"
+        labelPlacement="end">
+        Select All ({{ cartItems.length }} items)
+      </ion-checkbox>
+      <span class="selected-count" *ngIf="getSelectedCount() > 0">
+        {{ getSelectedCount() }} selected
+      </span>
+    </div>
+
+    <div class="cart-item" *ngFor="let item of cartItems" [class.selected]="isItemSelected(item)">
+      <ion-checkbox
+        class="item-checkbox"
+        [checked]="isItemSelected(item)"
+        (ionChange)="toggleItemSelection(item)"
+        (click)="$event.stopPropagation()">
+      </ion-checkbox>
+
       <div class="item" (click)="viewProduct(item.product)">
         <ion-img [src]="item.product.image || 'assets/images/placeholder.png'" class="product-image"></ion-img>
 
         <div class="item-info">
-          <ion-label class="product-name">
-            <span class="product-name-text">{{ item.product.name }}</span>
-          </ion-label>
+          <div class="product-header">
+            <ion-label class="product-name">
+              <span class="product-name-text">{{ item.product.name }}</span>
+            </ion-label>
+            <ion-label class="product-brand" *ngIf="item.product.brand">{{ item.product.brand }}</ion-label>
+          </div>
+
           <ion-label class="product-variety" *ngIf="item.selectedVariant">
-            Color: {{ item.selectedVariant }}
+            {{ getVariantLabel(item.selectedVariant) }}: {{ item.selectedVariant }}
           </ion-label>
 
+          <div class="product-rating" *ngIf="item.product.rating">
+            <ion-icon name="star" class="star-icon"></ion-icon>
+            <span class="rating-value">{{ item.product.rating }}</span>
+            <span class="rating-count">({{ formatNumber(item.product.reviews) }})</span>
+          </div>
+
           <div class="bottom-row">
-            <ion-label class="product-price">{{ formatPrice(item.product.price) }}</ion-label>
+            <div class="price-section">
+              <ion-label class="product-price">{{ formatPrice(item.product.price) }}</ion-label>
+              <ion-label class="original-price" *ngIf="item.product.originalPrice && item.product.originalPrice > item.product.price">
+                {{ formatPrice(item.product.originalPrice) }}
+              </ion-label>
+            </div>
             <div class="add-remove-button" (click)="$event.stopPropagation()">
               <button class="remove-button" (click)="updateQuantity(item, -1)">−</button>
               <ion-label class="product-counter">{{ item.quantity }}</ion-label>
@@ -38,20 +73,16 @@
           </div>
         </div>
       </div>
-
-      <button class="delete-button" (click)="removeItem(item)">
-        <ion-icon name="trash-outline"></ion-icon>
-      </button>
     </div>
   </div>
 
   <!-- Bottom bar with total and checkout -->
   <div class="bottom-bar" *ngIf="cartItems.length > 0">
     <div class="total-section">
-      <ion-label class="total-label">Total:</ion-label>
+      <ion-label class="total-label">Total ({{ getSelectedCount() }} items):</ion-label>
       <ion-label class="total-amount">{{ formatPrice(getCartTotal()) }}</ion-label>
     </div>
-    <button class="checkout-button" (click)="checkout()">
+    <button class="checkout-button" (click)="checkout()" [disabled]="getSelectedCount() === 0">
       Checkout
     </button>
   </div>

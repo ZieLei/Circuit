@@ -306,4 +306,32 @@ export class ProductViewPage implements OnInit {
     }
     return num.toString();
   }
+
+  getVariantLabel(): string {
+    if (!this.product?.variants || this.product.variants.length === 0) {
+      return 'Option';
+    }
+
+    // Check first variant to determine type
+    const firstVariant = this.product.variants[0].toLowerCase();
+
+    // Check for capacity/storage indicators
+    if (firstVariant.includes('gb') || firstVariant.includes('tb') || firstVariant.includes('mb')) {
+      return 'Capacity';
+    }
+
+    // Check for size indicators
+    if (firstVariant.includes('inch') || firstVariant.match(/^\d+\s*(gb|tb|mb|mm|cm|m|kg|g)$/)) {
+      return 'Size';
+    }
+
+    // Check for common color names
+    const colorKeywords = ['black', 'white', 'gray', 'grey', 'red', 'blue', 'green', 'yellow', 'pink', 'purple', 'orange', 'silver', 'gold', 'brown', 'beige', 'navy', 'teal', 'cyan', 'magenta', 'lime', 'indigo', 'violet', 'maroon', 'olive', 'charcoal', 'space gray', 'rose', 'midnight', 'starlight'];
+    if (colorKeywords.some(color => firstVariant.includes(color))) {
+      return 'Color';
+    }
+
+    // Default fallback
+    return 'Variant';
+  }
 }

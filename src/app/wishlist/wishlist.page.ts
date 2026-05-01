@@ -11,7 +11,7 @@ import {
 import { Router } from '@angular/router';
 import { ProductService, Product } from '../services/product.service';
 import { addIcons } from 'ionicons';
-import { trashOutline, cartOutline, heart, heartOutline } from 'ionicons/icons';
+import { trashOutline, cartOutline, heart, heartOutline, star } from 'ionicons/icons';
 
 @Component({
   selector: 'app-wishlist',
@@ -35,7 +35,18 @@ export class WishlistPage implements OnInit {
     private productService: ProductService,
     private router: Router,
   ) {
-    addIcons({ heartOutline, cartOutline, trashOutline, heart });
+    addIcons({ heartOutline, cartOutline, trashOutline, heart, star });
+  }
+
+  formatNumber(num: number): string {
+    if (!num) return '0';
+    if (num >= 1_000_000) {
+      return (num / 1_000_000).toFixed(1) + 'M';
+    }
+    if (num >= 1_000) {
+      return (num / 1_000).toFixed(1) + 'k';
+    }
+    return num.toString();
   }
 
   ngOnInit() {
