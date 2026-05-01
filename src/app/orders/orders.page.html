@@ -1,9 +1,44 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
 
 <ion-content [fullscreen]="true">
 
-    <div class="header">
+  <div class="header">
     <ion-img src="assets/icon/back.png"></ion-img>
-    <ion-label class="title">Edit Profile</ion-label>
+    <ion-label class="title">My Orders</ion-label>
     <ion-img src="assets/icon/check.png"> </ion-img>
   </div>
+
+    <div class="category-tabs">
+      <!-- <span class="category" [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')">All</span> -->
+       <span class="category">All</span>
+       <span class="category">To pay</span>
+       <span class="category">To ship</span>
+       <span class="category">To receive</span>
+       <span class="category">To review</span>
+    </div>
+
+    <div class="content-area">
+      <div class="order-item" *ngFor="let product of test_product">
+        <div class="item">
+          <ion-label class="status">Completed</ion-label>
+          
+          <div class="item-content">
+            <img class="product-image" [src]="product.image">
+
+            <div class="product-details">
+              <ion-label>
+                <span class="product-name">{{ product.name }}</span>
+              </ion-label>
+              <ion-label class="product-variety">Black</ion-label>
+              <div class="price-and-view-button">
+                <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
+                <button class="view-product-button">View Product</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </ion-content>
