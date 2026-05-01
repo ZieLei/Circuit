@@ -1,27 +1,61 @@
 ion-tab-bar {
-    --background: white;
-    --min-height: 100px;
-}
-
-.icon {
-    width: 25px;
-    height: auto;
+  --background: #ffffff;
+  --min-height: 85px;
+  border-top: 1px solid #eef2ff;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.02);
+  padding-bottom: env(safe-area-inset-bottom, 8px);
 }
 
 ion-tab-button {
-    --color-selected: skyblue;
-    font-family: 'Inter';
-    font-weight: 600;
+  --color: #6b7280;
+  --color-selected: #1d4ed8;
+  --ripple-color: #1d4ed820;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+ion-tab-button .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+ion-tab-button.tab-selected ion-img.icon::part(image),
+ion-tab-button.ion-activated ion-img.icon::part(image) {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(63%) saturate(4160%) hue-rotate(207deg) brightness(98%) contrast(88%);
 }
 
 .pfp {
-    width: 25px;
-    height: auto;
-    border: 2px solid white;
-    border-radius: 50%;
-    outline: 2px solid skyblue;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid white;
+  outline: 2px solid #dbeafe;
+  transition: outline-color 0.2s ease;
+  object-fit: cover;
 }
 
 .pfp::part(image) {
-    border-radius: 50%;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ion-tab-button[aria-selected="true"] .pfp {
+  outline-color: #1d4ed8;
+  outline-width: 2.5px;
+}
+
+ion-label {
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+ion-tab-button[aria-selected="true"] ion-label {
+  font-weight: 600;
+  letter-spacing: -0.2px;
 }

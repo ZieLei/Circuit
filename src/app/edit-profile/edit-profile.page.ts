@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonImg, IonItem, IonInput, IonInputPasswordToggle } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -12,9 +13,17 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonImg, IonItem,
 })
 export class EditProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goBack() {
+    this.router.navigate(['/tabs/profile']);
+  }
+
+  saveProfile() {
+    // Save profile logic here
+    this.router.navigate(['/tabs/profile']);
+  }
 }

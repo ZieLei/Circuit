@@ -4,9 +4,9 @@
 
 <ion-content [fullscreen]="true">
   <div class="header">
-    <ion-img src="assets/icon/back.png"></ion-img>
+    <ion-img src="assets/icon/back.png" (click)="goBack()"></ion-img>
     <ion-label class="title">Edit Profile</ion-label>
-    <ion-img src="assets/icon/check.png"> </ion-img>
+    <ion-img src="assets/icon/check.png" (click)="saveProfile()"> </ion-img>
   </div>
 
   <div class="profile-banner"></div>

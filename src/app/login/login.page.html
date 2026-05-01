@@ -12,7 +12,7 @@
   <ion-label class="forgot-password">Forgot password?</ion-label>
 
   <div style="display: flex; justify-content: center;">
-    <ion-button class="login-button">Login</ion-button>
+    <ion-button class="login-button" (click)="login()">Login</ion-button>
   </div>
 
   <div class="or-line">
@@ -21,26 +21,26 @@
 
   <div class="other-login">
     <div style="width: 350px;">
-      <ion-button class="google-button">
+      <ion-button class="google-button" (click)="login()">
         Continue with Google
       </ion-button>
     </div>
     <div style="width: 350px;">
-      <ion-button class="apple-button">
+      <ion-button class="apple-button" (click)="login()">
         Continue with Apple
       </ion-button>
     </div>
     <div style="width: 350px;">
-      <ion-button class="facebook-button">
+      <ion-button class="facebook-button" (click)="login()">
         Continue with Facebook
       </ion-button>
     </div>
     <div style="width: 350px;">
-      <ion-button class="guest-button">
+      <ion-button class="guest-button" (click)="login()">
         Continue As Guest
       </ion-button>
     </div>
   </div>
 
-  <ion-label class="need-account-label">Need an account? <span class="sign-up-label">Sign up</span></ion-label>
+  <ion-label class="need-account-label">Need an account? <span class="sign-up-label" (click)="goToSignup()">Sign up</span></ion-label>
 </ion-content>

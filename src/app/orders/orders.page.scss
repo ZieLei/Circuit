@@ -96,6 +96,7 @@ ion-content {
 .item-content {
   display: flex;         
   flex-direction: row;
+  align-items: stretch;
 }
 
 .item {
@@ -118,6 +119,11 @@ ion-content {
 
 .product-details {
     color: black;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: 20px 10px 20px 0;
 }
 
 .product-variety {
@@ -126,7 +132,7 @@ ion-content {
     font-weight: 400;
     font-size: 12px;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .price-and-view-button {
@@ -134,6 +140,9 @@ ion-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
+    width: 100%;
+    gap: 10px;
 }
 
 .product-price {
@@ -148,6 +157,7 @@ ion-content {
     background: skyblue;
     height: 30px;
     width: 100px;
+    flex-shrink: 0;
     border-radius: 5px;
 
     font-family: 'Inter';

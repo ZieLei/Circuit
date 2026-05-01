@@ -17,25 +17,25 @@
     <ion-label class="user-name">Bocchi</ion-label>
     <ion-label class="name">Hitori Gotoh</ion-label>
 
-    <button class="edit-button">
+    <button class="edit-button" (click)="goToEditProfile()">
       <img src="assets/icon/pencil.png" alt="">
       Edit Profile
     </button>
 
     <div class="orders-buttons">
-      <div class="order-button">
+      <div class="order-button" (click)="goToOrders()">
         <img src="assets/icon/pay.png">
         <ion-label>To Pay</ion-label>
       </div>
-      <div class="order-button">
+      <div class="order-button" (click)="goToOrders()">
         <img src="assets/icon/box.png">
         <ion-label>To Ship</ion-label>
       </div>
-      <div class="order-button">
+      <div class="order-button" (click)="goToOrders()">
         <img src="assets/icon/receive.png">
         <ion-label>To Receive</ion-label>
       </div>
-      <div class="order-button">
+      <div class="order-button" (click)="goToOrders()">
          <img src="assets/icon/review.png">
          <ion-label>To Review</ion-label>
       </div>

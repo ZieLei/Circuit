@@ -1,60 +1,75 @@
 .title {
     font-family: 'Inter';
-    font-weight: 600;
-    letter-spacing: 0.2px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
     color: black;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .header {
-    background: white;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 16px;
     justify-content: center;
     align-items: center;
 
     display: flex;
     flex-direction: row;
 
-    gap: 15px;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.05));
 }
 
 .search-bar {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    --padding-start: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    --padding-start: 14px;
     border-radius: 50px;
 
     display: block;
-    width: 250px;
+    width: 100%;
+    max-width: 240px;
+    height: 40px;
+    --background: #f9fafb;
 
     font-family: 'Inter';
 
-    --placeholder-color: #504945;
+    --placeholder-color: #6b7280;
     --placeholder-font-family: 'Inter';
-    --placeholder-font-weight: 500;
+    --placeholder-font-weight: 400;
 }
 
 .notification-button {
-    background: transparent;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .notification-button img {
-    width: 25px;
+    width: 18px;
     height: auto;
 }
 
 ion-content {
-    --background: rgba(255, 255, 255, 0.96);
+    --background: #f5f7fb;
 }
 
 .product-name {
     font-family: 'Inter';
-    color: black;
-    font-weight: 400;
+    color: #111827;
+    font-weight: 500;
     font-size: 15px;
     line-height: 1.2;
-    margin-top: 20px;
+    margin-top: 0;
   
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -66,37 +81,43 @@ ion-content {
 
 .wishlist-item  {
     background: white;
-    margin: 10px;
-    border-radius: 10px;
-
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
-
+    margin: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
 }
 
 .item {
     display: flex;
+    align-items: stretch;
 }
 
 .product-image {
     height: 110px;
     width: 110px;
     object-fit: cover;
-    margin: 20px;
+    margin: 16px;
     display: block;
-    border-radius: 2px;
+    border-radius: 10px;
 }
 
 .product-details {
     color: black;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: 16px 10px 16px 0;
 }
 
 .product-variety {
-    color: gray;
+    color: #6b7280;
     font-family: 'Inter';
-    font-weight: 400;
+    font-weight: 500;
     font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-bottom: 14px;
 }
 
 .price-and-view-button {
@@ -104,22 +125,29 @@ ion-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
 }
 
 .product-price {
     font-family: 'Inter';
-    color: red ;
-    font-weight: 500;
-    font-size: 15px;
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .view-product-button {
     margin-right: 10px;
-    background: skyblue;
-    height: 30px;
-    width: 100px;
-    border-radius: 5px;
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: white;
+    height: 34px;
+    width: 112px;
+    border-radius: 8px;
+    border: none;
+    flex-shrink: 0;
 
     font-family: 'Inter';
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 12px;
 }

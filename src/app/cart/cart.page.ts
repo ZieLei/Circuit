@@ -32,6 +32,10 @@ export class CartPage implements OnInit {
     return '₱' + price.toLocaleString('en-PH');
   }
 
+  getSafeCount(count: number | null | undefined): number {
+    return Math.max(1, count ?? 1);
+  }
+
   ngOnInit() {
   }
 

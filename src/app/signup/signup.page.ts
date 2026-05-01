@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonImg, IonLabel, IonInput, IonButton } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,9 +13,17 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonImg, IonLabel, IonInput
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  signup() {
+    // Signup logic here - for now just navigate to home
+    this.router.navigate(['/tabs/home']);
+  }
 }

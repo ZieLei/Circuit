@@ -5,6 +5,6 @@
 <ion-content [fullscreen]="true">
   <ion-label class="welcome-label">WELCOME TO <span class="circuit-label"> <br> Circuit</span> </ion-label>
 
-  <ion-button class="register-button">Register</ion-button>
-  <ion-button class="login-button">Login</ion-button>
+  <ion-button class="register-button" (click)="goToSignup()">Register</ion-button>
+  <ion-button class="login-button" (click)="goToLogin()">Login</ion-button>
 </ion-content>

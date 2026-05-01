@@ -5,24 +5,26 @@
 <ion-content [fullscreen]="true">
 
   <div class="header">
-    <ion-img src="assets/icon/back.png"></ion-img>
+    <ion-img src="assets/icon/back.png" (click)="goBack()"></ion-img>
     <ion-label class="title">My Orders</ion-label>
     <ion-img src="assets/icon/check.png"> </ion-img>
   </div>
 
     <div class="category-tabs">
-      <!-- <span class="category" [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')">All</span> -->
-       <span class="category">All</span>
-       <span class="category">To pay</span>
-       <span class="category">To ship</span>
-       <span class="category">To receive</span>
-       <span class="category">To review</span>
+      <span
+        class="category"
+        *ngFor="let category of categories"
+        [class.active]="selectedCategory === category.id"
+        (click)="selectCategory(category.id)"
+      >
+        {{ category.label }}
+      </span>
     </div>
 
     <div class="content-area">
-      <div class="order-item" *ngFor="let product of test_product">
+      <div class="order-item" *ngFor="let product of filteredProducts">
         <div class="item">
-          <ion-label class="status">Completed</ion-label>
+          <ion-label class="status">{{ product.status }}</ion-label>
           
           <div class="item-content">
             <img class="product-image" [src]="product.image">
@@ -31,7 +33,7 @@
               <ion-label>
                 <span class="product-name">{{ product.name }}</span>
               </ion-label>
-              <ion-label class="product-variety">Black</ion-label>
+              <ion-label class="product-variety">Quantity: {{ getSafeCount(product.count) }}</ion-label>
               <div class="price-and-view-button">
                 <ion-label class="product-price">{{ formatPrice(product.price) }}</ion-label>
                 <button class="view-product-button">View Product</button>

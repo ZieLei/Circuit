@@ -18,19 +18,23 @@
                 <div class="rows">
                     <div *ngFor="let item of getFilteredItems(row)" class="product-card">
                         <ion-img class="item-image" [src]="item.image"></ion-img>
-                        <ion-label class="name-label">{{ item.name }}</ion-label>
-                        <ion-label class="price-label">{{ formatPrice(item.price) }}</ion-label>
+                        <div class="card-body">
+                            <ion-label class="name-label">{{ item.name }}</ion-label>
+                            <ion-label class="price-label">{{ formatPrice(item.price) }}</ion-label>
 
-                        <div class="special-offer">
-                            <ion-label>Test Offer</ion-label>
-                        </div>
-
-                        <div class="rating-and-reviews">
-                            <div class="rating">
-                                <ion-img class="star-icon" src="assets/icon/star.png"></ion-img>
-                                <ion-label>{{ item.rating }}</ion-label>
+                            <div class="special-offer">
+                                <ion-label>Test Offer</ion-label>
                             </div>
-                            <ion-label>{{ formatNumber(item.reviews) + ' reviews' }}</ion-label>
+
+                            <div class="rating-and-reviews">
+                                <div class="rating">
+                                    <ion-img class="star-icon" src="assets/icon/star.png"></ion-img>
+                                    <ion-label>{{ item.rating }}</ion-label>
+                                </div>
+                                <ion-label>{{ formatNumber(item.reviews) + ' reviews' }}</ion-label>
+                            </div>
+
+                            <ion-label class="sales-label">{{ formatNumber(item.sales) + ' sold' }}</ion-label>
                         </div>
                     </div>
                 </div>
