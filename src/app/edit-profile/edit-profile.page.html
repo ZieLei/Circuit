@@ -4,7 +4,9 @@
 
 <ion-content [fullscreen]="true">
   <div class="header">
+    <ion-img src="assets/icon/back.png"></ion-img>
     <ion-label class="title">Edit Profile</ion-label>
+    <ion-img src="assets/icon/check.png"> </ion-img>
   </div>
 
   <div class="profile-banner"></div>
@@ -16,7 +18,17 @@
   </button>
 
   <div class="username-change">
-    <ion-label>Username:</ion-label>
-    <ion-input class="username-input" placeholder="Bocchi"></ion-input>
+    <ion-label class="label-change">Username:</ion-label>
+    <ion-input class="input-change" placeholder="Bocchi"></ion-input>
+  </div>
+  <div class="email-change">
+    <ion-label class="label-change">Email:</ion-label>
+    <ion-input class="input-change" placeholder="bocchi.hitori@chuu.ne.jp" type="Email"></ion-input>
+  </div>
+  <div class="password-change">
+    <ion-label class="label-change">Password:</ion-label>
+    <ion-input class="input-change" placeholder="Password" type="password">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
   </div>
 </ion-content>
