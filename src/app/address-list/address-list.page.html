@@ -1,0 +1,62 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
+
+<ion-content [fullscreen]="true">
+  <div class="address-list-container">
+    <!-- Header -->
+    <div class="header">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+      <ion-label class="title">My Addresses</ion-label>
+      <button class="add-button" (click)="addNewAddress()">
+        <ion-icon name="add-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Address List -->
+    <div class="addresses-container" *ngIf="addresses.length > 0">
+      <div class="address-card" *ngFor="let address of addresses" (click)="editAddress(address)" [class.default]="address.isDefault">
+        <div class="address-content">
+          <div class="address-header">
+            <div class="recipient-info">
+              <span class="name">{{ address.fullName }}</span>
+              <span class="phone">{{ address.phone }}</span>
+            </div>
+            <div class="default-badge" *ngIf="address.isDefault">
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <span>Default</span>
+            </div>
+            <button class="set-default-button" *ngIf="!address.isDefault" (click)="selectDefault(address); $event.stopPropagation()">
+              <span>Set as Default</span>
+            </button>
+          </div>
+
+          <div class="address-details">
+            <ion-icon name="location-outline" class="location-icon"></ion-icon>
+            <div class="address-text">
+              <p>{{ address.street }}</p>
+              <p>{{ address.city }}, {{ address.postalCode }}</p>
+              <p>{{ address.country }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chevron">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="addresses.length === 0">
+      <ion-icon name="location-outline" class="empty-icon"></ion-icon>
+      <ion-label class="empty-text">No saved addresses</ion-label>
+      <ion-button class="add-address-btn" (click)="addNewAddress()">
+        <ion-icon name="add-outline" slot="start"></ion-icon>
+        Add Address
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

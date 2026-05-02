@@ -1,0 +1,72 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap" rel="stylesheet">
+
+<ion-content [fullscreen]="true">
+  <div class="edit-address-container">
+    <!-- Header -->
+    <div class="header">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+      <ion-label class="title">{{ pageTitle }}</ion-label>
+      <button class="delete-header-button" *ngIf="!isNewAddress" (click)="deleteAddress()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Address Form -->
+    <div class="form-container">
+      <div class="form-section">
+        <div class="section-title">
+          <ion-icon name="person-outline"></ion-icon>
+          <span>Contact Information</span>
+        </div>
+
+        <div class="input-group">
+          <span class="input-label">Full Name</span>
+          <ion-input class="modern-input" placeholder="Enter full name" [(ngModel)]="address.fullName"></ion-input>
+        </div>
+
+        <div class="input-group">
+          <span class="input-label">Phone Number</span>
+          <ion-input class="modern-input" placeholder="Enter phone number" type="tel" [(ngModel)]="address.phone"></ion-input>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title">
+          <ion-icon name="location-outline"></ion-icon>
+          <span>Address Details</span>
+        </div>
+
+        <div class="input-group">
+          <span class="input-label">Street Address</span>
+          <ion-input class="modern-input" placeholder="Enter street address" [(ngModel)]="address.street"></ion-input>
+        </div>
+
+        <div class="input-group">
+          <span class="input-label">City / District</span>
+          <ion-input class="modern-input" placeholder="Enter city" [(ngModel)]="address.city"></ion-input>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group half">
+            <span class="input-label">Postal Code</span>
+            <ion-input class="modern-input" placeholder="ZIP" [(ngModel)]="address.postalCode"></ion-input>
+          </div>
+
+          <div class="input-group half">
+            <span class="input-label">Country</span>
+            <ion-input class="modern-input" placeholder="Country" [(ngModel)]="address.country"></ion-input>
+          </div>
+        </div>
+      </div>
+
+      <ion-button class="save-address-button" (click)="saveAddress()">
+        <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+        {{ isNewAddress ? 'Add Address' : 'Save Changes' }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

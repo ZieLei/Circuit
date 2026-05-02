@@ -125,24 +125,10 @@ ion-content {
     }
 }
 
-.input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    .input-icon {
-        position: absolute;
-        left: 16px;
-        font-size: 20px;
-        color: #9ca3af;
-        z-index: 2;
-    }
-}
-
 .modern-input {
     --background: white;
     --border-radius: 12px;
-    --padding-start: 48px;
+    --padding-start: 16px;
     --padding-end: 16px;
     --padding-top: 14px;
     --padding-bottom: 14px;

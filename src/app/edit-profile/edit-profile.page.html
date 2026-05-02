@@ -28,34 +28,21 @@
     <div class="form-container">
       <div class="input-group">
         <span class="input-label">Username</span>
-        <div class="input-wrapper">
-          <ion-icon name="person-outline" class="input-icon"></ion-icon>
-          <ion-input class="modern-input" placeholder="Enter username" value="Bocchi"></ion-input>
-        </div>
+        <ion-input class="modern-input" placeholder="Enter username" value="Bocchi"></ion-input>
       </div>
 
       <div class="input-group">
         <span class="input-label">Email Address</span>
-        <div class="input-wrapper">
-          <ion-icon name="mail-outline" class="input-icon"></ion-icon>
-          <ion-input class="modern-input" placeholder="Enter email" type="email" value="bocchi.hitori@chuu.ne.jp"></ion-input>
-        </div>
+        <ion-input class="modern-input" placeholder="Enter email" type="email" value="bocchi.hitori@chuu.ne.jp"></ion-input>
       </div>
 
       <div class="input-group">
         <span class="input-label">Password</span>
-        <div class="input-wrapper">
-          <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
-          <ion-input class="modern-input" placeholder="Enter password" type="password">
-            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-          </ion-input>
-        </div>
+        <ion-input class="modern-input" placeholder="Enter password" type="password">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
       </div>
 
-      <ion-button class="save-profile-button" (click)="saveProfile()">
-        <ion-icon name="save-outline" slot="start"></ion-icon>
-        Save Changes
-      </ion-button>
     </div>
   </div>
 </ion-content>

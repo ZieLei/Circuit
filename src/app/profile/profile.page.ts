@@ -29,4 +29,8 @@ export class ProfilePage implements OnInit {
       this.router.navigate(['/orders']);
     }
   }
+
+  goToAddressList() {
+    this.router.navigate(['/address-list']);
+  }
 }

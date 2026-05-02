@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonImg, IonItem, IonInput, IonInputPasswordToggle, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { arrowBackOutline, checkmarkOutline, personOutline, mailOutline, lockClosedOutline, cameraOutline, saveOutline } from 'ionicons/icons';
+import { arrowBackOutline, checkmarkOutline, cameraOutline, saveOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-edit-profile',
@@ -16,7 +16,7 @@ import { arrowBackOutline, checkmarkOutline, personOutline, mailOutline, lockClo
 export class EditProfilePage implements OnInit {
 
   constructor(private router: Router) {
-    addIcons({ arrowBackOutline, checkmarkOutline, personOutline, mailOutline, lockClosedOutline, cameraOutline, saveOutline });
+    addIcons({ arrowBackOutline, checkmarkOutline, cameraOutline, saveOutline });
   }
 
   ngOnInit() {
